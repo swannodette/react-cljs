@@ -51,9 +51,8 @@ React.unmountComponentAtNode = function(container) {};
 
 /**
  * @param {React.ReactComponent} component
- * @param {Function} callback
  */
-React.renderComponentToString = function(component, callback) {};
+React.renderComponentToString = function(component) {};
 
 /**
  * @interface
@@ -136,10 +135,9 @@ React.ReactComponent.prototype.setState = function(nextState, callback) {};
 React.ReactComponent.prototype.replaceState = function(nextState, callback) {};
 
 /**
- * @param {Element} element
  * @protected
  */
-React.ReactComponent.prototype.componentDidMount = function(element) {};
+React.ReactComponent.prototype.componentDidMount = function() {};
 
 /**
  * @param {Object} nextProps
@@ -174,11 +172,10 @@ React.ReactComponent.prototype.render = function() {};
 /**
  * @param {Object} prevProps
  * @param {Object} prevState
- * @param {Element} element
  * @protected
  */
 React.ReactComponent.prototype.componentDidUpdate = function(
-  prevProps, prevState, element) {};
+  prevProps, prevState) {};
 
 /**
  * @protected
