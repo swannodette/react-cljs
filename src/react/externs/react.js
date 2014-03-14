@@ -306,6 +306,22 @@ React.DOM.section = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
+React.DOM.article = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.aside = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
 React.DOM.dl = function(props, children) {};
 
 /**
