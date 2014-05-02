@@ -81,6 +81,12 @@ React.ReactComponent.prototype.refs;
 React.ReactComponent.prototype.propTypes;
 
 /**
+ * @return {boolean} True if mounted, false otherwise.
+ * @protected
+ */
+React.ReactComponent.prototype.isMounted() = function() {};
+
+/**
  * @param {Object} nextProps
  * @param {Function=} callback
  */
