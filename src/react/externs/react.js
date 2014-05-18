@@ -84,7 +84,7 @@ React.ReactComponent.prototype.propTypes;
  * @return {boolean} True if mounted, false otherwise.
  * @protected
  */
-React.ReactComponent.prototype.isMounted() = function() {};
+React.ReactComponent.prototype.isMounted = function() {};
 
 /**
  * @param {Object} nextProps
