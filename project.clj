@@ -1,4 +1,4 @@
-(defproject com.facebook/react "0.9.0.3-SNAPSHOT"
+(defproject com.facebook/react "0.10.0.0-SNAPSHOT"
   :description "Facebook's React"
   :url "http://facebook.github.io/react"
   :license {:name "Eclipse Public License"

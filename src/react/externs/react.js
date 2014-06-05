@@ -1,5 +1,5 @@
 /**
- * @fileoverview Externs for React 0.5.1.
+ * @fileoverview Externs for React 0.10.0.
  *
  * @see http://facebook.github.io/react
  * @externs
@@ -55,6 +55,28 @@ React.unmountComponentAtNode = function(container) {};
 React.renderComponentToString = function(component) {};
 
 /**
+ * @param {React.ReactComponent} component
+ * @return {string}
+ */
+React.renderComponentToStaticMarkup = function(component) {};
+
+/**
+ * @param {Function} constructor React component constructor.
+ * @param {Object} props Initial props of the component instance.
+ * @param {Element} container DOM element to render into.
+ * @return {React.ReactComponent} Component instance rendered in `container`.
+ */
+React.constructAndRenderComponent = function(constructor, props, container) {};
+
+/**
+ * @param {Function} componentConstructor React component constructor
+ * @param {Object} props Initial props of the component instance.
+ * @param {string} id ID of the DOM element to render into.
+ * @return {React.ReactComponent} Component instance rendered in the container node.
+ */
+React.constructAndRenderComponentByID = function(componentConstructor, props, id) {};
+
+/**
  * @interface
  */
 React.ReactComponent = function() {};
@@ -76,9 +98,20 @@ React.ReactComponent.prototype.refs;
 
 /**
  * @type {Object}
+ */
+React.ReactComponent.prototype.context;
+
+/**
+ * @type {Object}
  * @protected
  */
 React.ReactComponent.prototype.propTypes;
+
+/**
+ * @type {Object}
+ * @protected
+ */
+React.ReactComponent.prototype.contextTypes;
 
 /**
  * @return {boolean} True if mounted, false otherwise.
@@ -101,6 +134,11 @@ React.ReactComponent.prototype.getInitialState = function() {};
  * @return {Object}
  */
 React.ReactComponent.prototype.getDefaultProps = function() {};
+
+/**
+ * @return {Object}
+ */
+React.ReactComponent.prototype.getChildContext = function() {};
 
 /**
  * @return {Element}
@@ -139,6 +177,11 @@ React.ReactComponent.prototype.setState = function(nextState, callback) {};
  * @protected
  */
 React.ReactComponent.prototype.replaceState = function(nextState, callback) {};
+
+/**
+ * @protected
+ */
+React.ReactComponent.prototype.componentWillMount = function() {};
 
 /**
  * @protected
@@ -188,6 +231,7 @@ React.ReactComponent.prototype.componentDidUpdate = function(
  */
 React.ReactComponent.prototype.componentWillUnmount = function() {};
 
+
 /**
  * @type {Object}
  * @const
@@ -224,6 +268,30 @@ React.DOM.address = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
+React.DOM.area = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...React.ChildrenArgument} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.article = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...React.ChildrenArgument} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.aside = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
 React.DOM.audio = function(props, children) {};
 
 /**
@@ -233,6 +301,46 @@ React.DOM.audio = function(props, children) {};
  * @protected
  */
 React.DOM.b = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.base = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.bdi = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.bdo = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.big = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.blockquote = function(props, children) {};
 
 /**
  * @param {Object=} props
@@ -264,6 +372,30 @@ React.DOM.button = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
+React.DOM.canvas = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.caption = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.cite = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
 React.DOM.code = function(props, children) {};
 
 /**
@@ -288,6 +420,22 @@ React.DOM.colgroup = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
+React.DOM.data = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.datalist = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
 React.DOM.dd = function(props, children) {};
 
 /**
@@ -296,31 +444,31 @@ React.DOM.dd = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
+React.DOM.del = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.details = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.dfn = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
 React.DOM.div = function(props, children) {};
-
-/**
- * @param {Object=} props
- * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
- * @return {React.ReactComponent}
- * @protected
- */
-React.DOM.section = function(props, children) {};
-
-/**
- * @param {Object=} props
- * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
- * @return {React.ReactComponent}
- * @protected
- */
-React.DOM.article = function(props, children) {};
-
-/**
- * @param {Object=} props
- * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
- * @return {React.ReactComponent}
- * @protected
- */
-React.DOM.aside = function(props, children) {};
 
 /**
  * @param {Object=} props
@@ -361,6 +509,22 @@ React.DOM.embed = function(props, children) {};
  * @protected
  */
 React.DOM.fieldset = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.figcaption = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.figure = function(props, children) {};
 
 /**
  * @param {Object=} props
@@ -432,6 +596,14 @@ React.DOM.h6 = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
+React.DOM.head = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
 React.DOM.header = function(props, children) {};
 
 /**
@@ -441,6 +613,15 @@ React.DOM.header = function(props, children) {};
  * @protected
  */
 React.DOM.hr = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.html = function(props, children) {};
+
 
 /**
  * @param {Object=} props
@@ -472,7 +653,23 @@ React.DOM.img = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
-React.DOM.input = function(props, children) {};
+React.DOM.ins = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.kbd = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.keygen = function(props, children) {};
 
 /**
  * @param {Object=} props
@@ -504,7 +701,63 @@ React.DOM.li = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
-React.DOM.line = function(props, children) {};
+React.DOM.link = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.main = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.map = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.mark = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.menu = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.menuitem = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.meta = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.meter = function(props, children) {};
 
 /**
  * @param {Object=} props
@@ -513,6 +766,14 @@ React.DOM.line = function(props, children) {};
  * @protected
  */
 React.DOM.nav = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.noscript = function(props, children) {};
 
 /**
  * @param {Object=} props
@@ -552,6 +813,14 @@ React.DOM.option = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
+React.DOM.output = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
 React.DOM.p = function(props, children) {};
 
 /**
@@ -569,6 +838,78 @@ React.DOM.param = function(props, children) {};
  * @protected
  */
 React.DOM.pre = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.progress = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.q = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.rp = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.rt = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.ruby = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.s = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.samp = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.script = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.section = function(props, children) {};
 
 /**
  * @param {Object=} props
@@ -608,6 +949,22 @@ React.DOM.span = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
+React.DOM.strong = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.style = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
 React.DOM.sub = function(props, children) {};
 
 /**
@@ -616,7 +973,7 @@ React.DOM.sub = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
-React.DOM.sup = function(props, children) {};
+React.DOM.summary = function(props, children) {};
 
 /**
  * @param {Object=} props
@@ -624,7 +981,7 @@ React.DOM.sup = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
-React.DOM.strong = function(props, children) {};
+React.DOM.sup = function(props, children) {};
 
 /**
  * @param {Object=} props
@@ -760,7 +1117,31 @@ React.DOM.g = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
+React.DOM.line = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.linearGradient = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
 React.DOM.path = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.polygon = function(props, children) {};
 
 /**
  * @param {Object=} props
@@ -777,6 +1158,14 @@ React.DOM.polyline = function(props, children) {};
  * @protected
  */
 React.DOM.rect = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.stop = function(props, children) {};
 
 /**
  * @param {Object=} props
