@@ -143,6 +143,11 @@ React.ReactComponent.prototype.replaceState = function(nextState, callback) {};
 /**
  * @protected
  */
+React.ReactComponent.prototype.componentWillMount = function() {};
+
+/**
+ * @protected
+ */
 React.ReactComponent.prototype.componentDidMount = function() {};
 
 /**
