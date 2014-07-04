@@ -653,6 +653,14 @@ React.DOM.img = function(props, children) {};
  * @return {React.ReactComponent}
  * @protected
  */
+React.DOM.input = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
 React.DOM.ins = function(props, children) {};
 
 /**
@@ -1182,3 +1190,32 @@ React.DOM.svg = function(props, children) {};
  * @protected
  */
 React.DOM.text = function(props, children) {};
+
+/**
+ * @type {Object}
+ * @const
+ */
+React.addons = {};
+
+/**
+ * @param {React.ReactComponent} container
+ * @param {Object} props
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.addons.cloneWithProps = function(container, props) {};
+
+
+/**
+ * @param {...string|Object} className
+ * @protected
+ */
+React.addons.classSet = function(classNames) {};
+
+/**
+ * @param {Object} value
+ * @param {Object} spec
+ * @return {Object}
+ * @protected
+ */
+React.addons.update = function(value, spec) {};
