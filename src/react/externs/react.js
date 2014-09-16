@@ -1182,3 +1182,19 @@ React.DOM.svg = function(props, children) {};
  * @protected
  */
 React.DOM.text = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.dialog = function(props, children) {};
+
+/**
+ * @param {Object=} props
+ * @param {...string|React.ReactComponent|Array.<React.ReactComponent>} children
+ * @return {React.ReactComponent}
+ * @protected
+ */
+React.DOM.picture = function(props, children) {};
