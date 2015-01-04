@@ -42,6 +42,12 @@ React.createFactory = function(specification) {};
 React.isValidClass = function(componentClass) {};
 
 /**
+ * @param {*} element
+ * @return {boolean}
+ */
+React.isValidElement = function(element) {};
+
+/**
  * @param {React.ReactComponent} container
  * @param {Element} mountPoint
  * @param {Function=} callback
